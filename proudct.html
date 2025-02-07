@@ -1,0 +1,359 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+
+    <title>Chef Friend - proudct</title>
+
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Source Sans Pro Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!--for tailwindcss styles-->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .Poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .Source {
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .dm {
+            font-family: 'DM Serif Text', serif;
+        }
+
+        .nav_link {
+            position: relative;
+        }
+
+        .nav_link::after {
+            content: '';
+            height: 2px;
+            width: 100%;
+            background-color: #FF3E54;
+            position: absolute;
+            left: 0px;
+            bottom: -3px;
+            opacity: 0;
+            pointer-events: none;
+
+            /*to make it smooth: */
+            transition: all 0.2s;
+        }
+
+        .nav_link:hover::after,
+        .nav_link:focus::after {
+            opacity: 100;
+        }
+
+        .mask-image {
+            -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+            mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+        }
+    </style>
+
+</head>
+
+<body class="text-sm Poppins">
+
+    <!--the navbar-->
+    <div class="sticky top-0 z-50 bg-white">
+        <div class="h-full w-full">
+
+            <div class="bg-white p-2 px-5 xl:px-7 flex justify-between shadow-md z-50">
+
+                <!--the logo-->
+                <div class="mx-3">
+                    <!--the button go to (index.html) -->
+                    <a href="#"><img src="./img/home/logo.png" class="w-28"></a>
+                </div>
+
+                <!--the pages button to switch between them with underline animation-->
+                <div class="nav flex items-center font-semibold text-[#1F3564]">
+                    <ul class="nav_list flex justify-center gap-14 sm:w-[600px]">
+                        <li class="nav_item flex"><a href="index.html"
+                                class="nav_link cursor-pointer px-1 flex">Home</a>
+                        </li>
+                        <li class="nav_item flex"><a href="About.html"
+                                class="nav_link cursor-pointer px-1 flex">About</a></li>
+                        <li class="nav_item flex"><a href="proudct.html" class="nav_link cursor-pointer px-1 flex border-b-2 border-[#FF3E54] text-[#FF3E54]">
+                                our proudct</a></li>
+                        <li class="nav_item flex"><a href="Contact.html" class="nav_link cursor-pointer px-1 flex ">
+                                Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact button-->
+                <div class="flex items-center justify-center mx-3">
+                    <!--the translation form-->
+                    <a href="./Contact.html">
+                        <div
+                            class="flex gap-2 p-2 px-7 rounded-full bg-[#C13139] hover:bg-[#b92933] transition text-xs text-white">
+                            Contact
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!--the hero-->
+    <div class="flex items-center justify-center m-5">
+        <div class="flex flex-col justify-center items-center w-full h-[600px] relative pt-20">
+            <img src="./img/product/hero.png" class="absolute -z-10 w-[1100px]">
+            <p class="text-white font-thin text-6xl text-center p-7 w-full dm">Best food for<br>your taste</p>
+            <p class="text-white text-lg font-semibold text-center mt-2">Discover delectable cuisine and
+                unforgettable<br> moments in our welcoming, culinary haven.</p>
+        </div>
+    </div>
+
+
+    <!-- the products-->
+    <div class="p-16 py-32 flex flex-col items-center bg-gradient-to-b from-white to-[#F54748]/10 shadow-md">
+        <!-- selection products -->
+        <div class="mb-20 flex justify-between w-[1100px]">
+
+            <style>
+                .tab-button {
+                    @apply cursor-pointer px-4 py-2 border border-[#191919]/50 rounded-full transition-all;
+                }
+
+                .tab-button:hover {
+                    @apply bg-[#C13139] border-[#C13139] text-white;
+                }
+
+                .tab-button.active {
+                    @apply bg-[#C13139] hover:bg-[#b92933] border-[#C13139] hover:border-[#b92933] text-white;
+                }
+
+                .hidden {
+                    display: none;
+                }
+            </style>
+
+            <!-- Switch Buttons -->
+            <div class="flex gap-3 text-xs text-[#191919]/50"> <!-- if there is no need for any section just add hidden on their class-->
+                <div id="1-tab"
+                    class="tab-button active cursor-pointer px-4 py-2 border rounded-full transition-all bg-[#1f3564] hover:bg-[#1f3564] border-[#1f3564] hover:border-[#1f3564] text-white"
+                    onclick="switchTab('1')">
+                    1
+                </div>
+                <div id="2-tab"
+                    class="tab-button cursor-pointer px-4 py-2 border border-[#1f3564]/50 rounded-full transition-all hover:bg-[#1f3564] hover:border-[#1f3564] hover:text-white"
+                    onclick="switchTab('2')">
+                    2
+                </div>
+                <div id="3-tab"
+                    class="tab-button cursor-pointer px-4 py-2 border border-[#1f3564]/50 rounded-full transition-all hover:bg-[#1f3564] hover:border-[#1f3564] hover:text-white"
+                    onclick="switchTab('3')">
+                    3
+                </div>
+                <div id="4-tab"
+                    class="tab-button cursor-pointer px-4 py-2 border border-[#1f3564]/50 rounded-full transition-all hover:bg-[#1f3564] hover:border-[#1f3564] hover:text-white"
+                    onclick="switchTab('4')">
+                    4
+                </div>
+                <div id="5-tab"
+                    class="tab-button cursor-pointer px-4 py-2 border border-[#1f3564]/50 rounded-full transition-all hover:bg-[#1f3564] hover:border-[#1f3564] hover:text-white"
+                    onclick="switchTab('5')">
+                    5
+                </div>
+            </div>
+
+            <!-- number of Results Found-->
+             <div class="flex gap-2">
+                <p class="font-semibold">52</p>
+                <p class="text-[#666666]">Results Found</p>
+             </div>
+        </div>
+
+        <!-- the products area (each area has a 12 products) -->
+        <div class="flex flex-col items-center">
+            <!-- area 1 ( from 1 - 12 product ) -->
+            <div id="area1" class="grid grid-cols-3 gap-24 justify-center">
+
+                <!-- the products boxes will be here: -->
+
+                <!-- product 1-->
+                <div class="h-96 w-64 rounded-xs bg-white border border-gray-300 hover:border-[#C13139]">
+                    <!-- the prodect img-->
+                    <div class="flex justify-center items-center">
+                        <img src="./img/home/product-img.png" class="mask-image size-[200px] mt-8 p-5">
+                    </div>
+
+                    <!-- product name -->
+                    <div class="flex justify-center items-center mt-4 px-3">
+                        <p class="text-black text-md font-semibold text-center">name of proudact</p>
+                    </div>
+
+                </div>
+
+                <!-- product 2-->
+                <div class="h-96 w-64 rounded-xs bg-white border border-gray-300 hover:border-[#C13139]">
+                    <!-- the prodect img-->
+                    <div class="flex justify-center items-center">
+                        <img src="./img/home/product-img.png" class="mask-image size-[200px] mt-8 p-5">
+                    </div>
+
+                    <!-- product name -->
+                    <div class="flex justify-center items-center mt-4 px-3">
+                        <p class="text-black text-md font-semibold text-center">name of proudact</p>
+                    </div>
+
+                </div>
+
+                <!-- product 3-->
+                <div class="h-96 w-64 rounded-xs bg-white border border-gray-300 hover:border-[#C13139]">
+                    <!-- the prodect img-->
+                    <div class="flex justify-center items-center">
+                        <img src="./img/home/product-img.png" class="mask-image size-[200px] mt-8 p-5">
+                    </div>
+
+                    <!-- product name -->
+                    <div class="flex justify-center items-center mt-4 px-3">
+                        <p class="text-black text-md font-semibold text-center">name of proudact</p>
+                    </div>
+
+                </div>
+
+                <!-- product 4-->
+                <div class="h-96 w-64 rounded-xs bg-white border border-gray-300 hover:border-[#C13139]">
+                    <!-- the prodect img-->
+                    <div class="flex justify-center items-center">
+                        <img src="./img/home/product-img.png" class="mask-image size-[200px] mt-8 p-5">
+                    </div>
+
+                    <!-- product name -->
+                    <div class="flex justify-center items-center mt-4 px-3">
+                        <p class="text-black text-md font-semibold text-center">name of proudact</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- area 2 ( from 13 - 24 product ) -->
+            <div id="area2" class="hidden grid grid-cols-4 gap-5 justify-center px-32 pb-32">
+
+                <!-- the products boxes will be here: -->
+                products section 2
+
+            </div>
+
+            <!-- area 3 ( from 25 - 36 product ) -->
+            <div id="area3" class="hidden grid grid-cols-4 gap-5 justify-center px-32 pb-32">
+
+                <!-- the products boxes will be here: -->
+                products section 3
+
+            </div>
+
+            <!-- area 4 ( from 37 - 48 product ) -->
+            <div id="area4" class="hidden grid grid-cols-4 gap-5 justify-center px-32 pb-32">
+
+                <!-- the products boxes will be here: -->
+                products section 4
+
+            </div>
+
+            <!-- area 5 ( from 49 - 60 product ) -->
+            <div id="area5" class="hidden grid grid-cols-4 gap-5 justify-center px-32 pb-32">
+
+                <!-- the products boxes will be here: -->
+                products section 5
+
+            </div>
+        </div>
+    </div>
+
+    <!--footer-->
+    <div class="z-10 h-80 py-14 px-24 flex text-[#191919]">
+
+        <!-- title and icons -->
+        <div class="space-y-5">
+            <h1 class="font-black text-5xl">Chef <span class="text-[#1F3564]">Friend</span></h1>
+            <p>Premium ingredients, exceptional<br> quality—Chef Friend, your trusted<br> culinary partner.</p>
+
+            <div class="flex gap-3">
+                <!-- instagram icon -->
+                <a href="#">
+                    <svg width="18" height="18" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M8.923 4.74303C8.01835 4.74303 7.13401 5.03573 6.38182 5.58412C5.62963 6.1325 5.04337 6.91195 4.69718 7.82388C4.35098 8.73582 4.2604 9.73928 4.43689 10.7074C4.61338 11.6755 5.04901 12.5647 5.68869 13.2627C6.32838 13.9607 7.14339 14.436 8.03066 14.6286C8.91793 14.8211 9.8376 14.7223 10.6734 14.3446C11.5092 13.9668 12.2235 13.3272 12.7261 12.5064C13.2287 11.6857 13.497 10.7208 13.497 9.73374C13.4981 9.07803 13.3805 8.42854 13.151 7.82252C12.9215 7.2165 12.5846 6.66587 12.1597 6.20221C11.7347 5.73855 11.2301 5.37099 10.6746 5.12059C10.1192 4.87019 9.52396 4.74189 8.923 4.74303ZM8.923 12.9776C8.335 12.9776 7.7602 12.7874 7.27129 12.4309C6.78238 12.0745 6.40133 11.5679 6.17631 10.9751C5.95129 10.3824 5.89241 9.73015 6.00713 9.1009C6.12184 8.47166 6.40499 7.89366 6.82077 7.44C7.23655 6.98634 7.76629 6.67739 8.343 6.55222C8.9197 6.42706 9.51747 6.4913 10.0607 6.73682C10.604 6.98234 11.0683 7.39811 11.395 7.93156C11.7216 8.465 11.896 9.09217 11.896 9.73374C11.8944 10.5935 11.5807 11.4176 11.0235 12.0256C10.4663 12.6336 9.711 12.9759 8.923 12.9776ZM14.75 4.539C14.75 4.76926 14.6874 4.99434 14.5702 5.1858C14.4529 5.37725 14.2863 5.52647 14.0913 5.61459C13.8964 5.7027 13.6818 5.72576 13.4748 5.68084C13.2679 5.63592 13.0777 5.52503 12.9285 5.36222C12.7793 5.1994 12.6777 4.99196 12.6365 4.76612C12.5953 4.54029 12.6165 4.3062 12.6972 4.09347C12.778 3.88074 12.9147 3.69892 13.0902 3.57099C13.2657 3.44307 13.472 3.37479 13.683 3.37479C13.8233 3.37421 13.9623 3.40392 14.0921 3.46221C14.2218 3.5205 14.3397 3.60622 14.439 3.71443C14.5383 3.82263 14.6169 3.9512 14.6705 4.09271C14.724 4.23423 14.7514 4.3859 14.751 4.539H14.75ZM17.775 5.71957C17.8045 4.20628 17.2868 2.74114 16.334 1.64102C15.3237 0.604915 13.9823 0.0406816 12.596 0.0687396C11.123 -0.0229132 6.709 -0.0229132 5.236 0.0687396C3.85013 0.038573 2.50847 0.601342 1.498 1.63666C0.549305 2.73915 0.034171 4.20326 0.063 5.71521C-0.021 7.32241 -0.021 12.1385 0.063 13.7457C0.0335268 15.259 0.551177 16.7242 1.504 17.8243C2.51461 18.859 3.85534 19.4227 5.241 19.3955C6.714 19.4871 11.128 19.4871 12.601 19.3955C13.9879 19.4276 15.3307 18.8628 16.339 17.8232C17.2865 16.7203 17.8018 15.2572 17.775 13.7457C17.863 12.1385 17.863 7.32677 17.775 5.71957ZM15.875 15.4675C15.7237 15.8875 15.4946 16.269 15.2021 16.5882C14.9096 16.9073 14.56 17.1572 14.175 17.3224C13.001 17.8308 10.214 17.713 8.917 17.713C7.62 17.713 4.829 17.8221 3.659 17.3224C3.27403 17.1572 2.9244 16.9073 2.6319 16.5882C2.33941 16.269 2.11034 15.8875 1.959 15.4675C1.493 14.1865 1.601 11.1456 1.601 9.73047C1.601 8.31531 1.501 5.27004 1.959 3.99345C2.11034 3.57341 2.33941 3.19191 2.6319 2.87277C2.9244 2.55363 3.27403 2.3037 3.659 2.13857C4.833 1.63011 7.62 1.74795 8.917 1.74795C10.214 1.74795 13.005 1.63884 14.175 2.13857C14.56 2.3037 14.9096 2.55363 15.2021 2.87277C15.4946 3.19191 15.7237 3.57341 15.875 3.99345C16.341 5.2744 16.233 8.31531 16.233 9.73047C16.233 11.1456 16.343 14.1931 15.875 15.4675Z"
+                            fill="#1F3564" />
+                    </svg>
+                </a>
+
+                <!-- tiktok icon-->
+                <a href="#">
+                    <svg width="18" height="18" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20 6V14C20 15.3261 19.444 16.5979 18.4542 17.5355C17.4644 18.4732 16.122 19 14.7222 19H6.27778C4.87802 19 3.5356 18.4732 2.54583 17.5355C1.55605 16.5979 1 15.3261 1 14V6C1 4.67392 1.55605 3.40215 2.54583 2.46447C3.5356 1.52678 4.87802 1 6.27778 1H14.7222C16.122 1 17.4644 1.52678 18.4542 2.46447C19.444 3.40215 20 4.67392 20 6Z"
+                            stroke="#1F3564" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M8.38896 10C7.76265 10 7.15041 10.1759 6.62965 10.5056C6.1089 10.8352 5.70302 11.3038 5.46334 11.8519C5.22366 12.4001 5.16095 13.0033 5.28314 13.5853C5.40532 14.1672 5.70692 14.7018 6.14979 15.1213C6.59265 15.5409 7.1569 15.8266 7.77117 15.9424C8.38545 16.0581 9.02216 15.9987 9.60079 15.7716C10.1794 15.5446 10.674 15.1601 11.0219 14.6667C11.3699 14.1734 11.5556 13.5933 11.5556 13V4C11.9071 5 13.2445 7 15.7778 7"
+                            stroke="#1F3564" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- the pages -->
+        <div class="ml-28 space-y-3">
+            <p class="text-[#C13139] text-lg pb-2">About Us</p>
+
+            <!-- the buttons -->
+            <div><a href="./About.html">About Us</a></div>
+            <div><a href="./Contact.html">Contact</a></div>
+            <div><a href="./proudct.html">our product</a></div>
+        </div>
+
+    </div>
+
+    <!-- the copyright -->
+    <p class="flex justify-center py-4">Copyright © 2025 <span class="font-semibold pl-1">Chef Friend</span>.</p>
+
+</body>
+
+<!-- for switch tab -->
+<script>
+    function switchTab(tab) {
+        // Get all tabs and content areas
+        const tabs = document.querySelectorAll(".tab-button");
+        const areas = document.querySelectorAll("[id^='area']");
+
+        // Hide all content areas
+        areas.forEach(area => area.classList.add("hidden"));
+
+        // Update tab styles
+        tabs.forEach(tabElement => {
+            if (tabElement.id === `${tab}-tab`) {
+                // Add selected styles using Tailwind classes
+                tabElement.classList.add("bg-[#1f3564]", "hover:bg-[#1f3564]", "border-[#1f3564]", "hover:border-[#1f3564]", "text-white");
+                tabElement.classList.remove("border-[#1f3564]/50", "hover:text-white", "hover:bg-[#1f3564]", "hover:border-[#1f3564]");
+            } else {
+                // Reset other tabs to default styles
+                tabElement.classList.remove("bg-[#1f3564]", "hover:bg-[#1f3564]", "border-[#1f3564]", "hover:border-[#1f3564]", "text-white");
+                tabElement.classList.add("border-[#1f3564]/50", "hover:text-white", "hover:bg-[#1f3564]", "hover:border-[#1f3564]");
+            }
+        });
+
+        // Show selected content area
+        document.getElementById(`area${tab}`).classList.remove("hidden");
+    }
+</script>
+
+</html>
