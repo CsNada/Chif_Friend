@@ -1,0 +1,362 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+
+    <title>Chef Friend - proudct</title>
+
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Source Sans Pro Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!--for tailwindcss styles-->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .Poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .Source {
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .dm {
+            font-family: 'DM Serif Text', serif;
+        }
+
+        .nav_link {
+            position: relative;
+        }
+
+        .nav_link::after {
+            content: '';
+            height: 2px;
+            width: 100%;
+            background-color: #FF3E54;
+            position: absolute;
+            left: 0px;
+            bottom: -3px;
+            opacity: 0;
+            pointer-events: none;
+
+            /*to make it smooth: */
+            transition: all 0.2s;
+        }
+
+        .nav_link:hover::after,
+        .nav_link:focus::after {
+            opacity: 100;
+        }
+
+        .mask-image {
+            -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+            mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+        }
+    </style>
+
+</head>
+
+<body class="text-sm Poppins">
+
+    <!--the navbar-->
+    <div class="sticky top-0 z-50 bg-white">
+        <div class="h-full w-full">
+
+            <div class="bg-white p-2 px-5 xl:px-7 flex justify-between shadow-md z-50">
+
+                <!--the logo-->
+                <div class="mx-3">
+                    <!--the button go to (index.html) -->
+                    <a href="#"><img src="../img/home/logo.png" class="w-28"></a>
+                </div>
+
+                <!-- Log out button-->
+                <div class="flex items-center justify-center mx-3">
+                    <button>
+                        <div
+                            class="flex gap-2 p-2 px-7 rounded-full bg-[#C13139] hover:bg-[#b92933] transition-all text-xs text-white">
+                            Log out
+                        </div>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!--the hero-->
+    <div class="flex items-center justify-center m-5">
+        <div class="flex flex-col justify-center items-center w-full h-[600px] relative pt-20">
+            <img src="../img/product/hero.png" class="absolute -z-10 w-[1100px]">
+            <p class="text-white font-thin text-6xl text-center p-7 w-full dm">Best food for<br>your taste</p>
+            <p class="text-white text-lg font-semibold text-center mt-2">Discover delectable cuisine and
+                unforgettable<br> moments in our welcoming, culinary haven.</p>
+        </div>
+    </div>
+
+
+    <!-- the products-->
+    <div class="p-16 py-32 flex flex-col items-center bg-gradient-to-b from-white to-[#F54748]/10 shadow-md">
+        <!-- selection products -->
+        <div class="mb-20 flex justify-between w-[900px] px-4">
+
+            <style>
+                .tab-button {
+                    @apply cursor-pointer px-4 py-2 border border-[#191919]/50 rounded-full transition-all;
+                }
+
+                .tab-button:hover {
+                    @apply bg-[#C13139] border-[#C13139] text-white;
+                }
+
+                .tab-button.active {
+                    @apply bg-[#C13139] hover:bg-[#b92933] border-[#C13139] hover:border-[#b92933] text-white;
+                }
+
+                .hidden {
+                    display: none;
+                }
+            </style>
+
+            <!-- Switch Buttons -->
+            <div class="flex gap-3 text-xs text-[#191919]/50">
+                <!-- if there is no need for any section just add hidden on their class-->
+                <div id="1-tab"
+                    class="tab-button active cursor-pointer px-4 py-2 border rounded-full transition-all bg-[#1f3564] hover:bg-[#1f3564] border-[#1f3564] hover:border-[#1f3564] text-white"
+                    onclick="switchTab('1')">
+                    1
+                </div>
+                <div id="2-tab"
+                    class="tab-button cursor-pointer px-4 py-2 border border-[#1f3564]/50 rounded-full transition-all hover:bg-[#1f3564] hover:border-[#1f3564] hover:text-white"
+                    onclick="switchTab('2')">
+                    2
+                </div>
+                <div id="3-tab"
+                    class="tab-button cursor-pointer px-4 py-2 border border-[#1f3564]/50 rounded-full transition-all hover:bg-[#1f3564] hover:border-[#1f3564] hover:text-white"
+                    onclick="switchTab('3')">
+                    3
+                </div>
+                <div id="4-tab"
+                    class="tab-button cursor-pointer px-4 py-2 border border-[#1f3564]/50 rounded-full transition-all hover:bg-[#1f3564] hover:border-[#1f3564] hover:text-white"
+                    onclick="switchTab('4')">
+                    4
+                </div>
+                <div id="5-tab"
+                    class="hidden tab-button cursor-pointer px-4 py-2 border border-[#1f3564]/50 rounded-full transition-all hover:bg-[#1f3564] hover:border-[#1f3564] hover:text-white"
+                    onclick="switchTab('5')">
+                    5
+                </div>
+            </div>
+
+
+            <div class="flex gap-4 items-center">
+                <!-- number of Results Found-->
+                <div class="flex gap-2">
+                    <p class="font-semibold">52</p>
+                    <p class="text-[#666666]">Results Found</p>
+                </div>
+
+                <!-- add products button-->
+                <a href="./Add-proudct.html" class="text-white text-xs bg-[#C13139] rounded-full py-2 px-5 hover:bg-[#b92933] transition-all">
+                    add proudct +
+                </a>
+            </div>
+        </div>
+
+        <!-- the products area (each area has a 12 products) -->
+        <div class="flex flex-col items-center">
+            <!-- area 1 ( from 1 - 12 product ) -->
+            <div id="area1" class="grid grid-cols-3 gap-24 justify-center">
+
+                <!-- the products boxes will be here: -->
+
+                <!-- product 1-->
+                <div class="h-96 w-64 rounded-xs bg-white border border-gray-300 hover:border-[#C13139]">
+
+                    <!-- buttons -->
+                    <div class="flex justify-between items-center px-7 pt-5 text-xs">
+
+                        <!-- edit -->
+                        <div class="text-[#C13139]">
+                            <button onclick="toggleModal()"
+                                class="flex justify-between items-center gap-2 bg-[#C13139]/10 p-1.5 px-4 rounded-full">
+                                <svg width="14" height="15" viewBox="0 0 18 19" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 18H1" stroke="#C13139" stroke-width="2" stroke-linecap="round" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M11.5859 2.4144C12.3669 1.63335 13.6333 1.63335 14.4143 2.4144V2.4144C15.1954 3.19545 15.1954 4.46178 14.4143 5.24283L6.13104 13.5261L3.10059 13.7281L3.30262 10.6977L11.5859 2.4144Z"
+                                        stroke="#C13139" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+
+                                <p>Edit</p>
+                            </button>
+                        </div>
+
+                        <!-- remove -->
+                        <button
+                            class="text-[#FF342B] underline hover:text-[#C13139] transition-all font-semibold">Remove</button>
+                    </div>
+
+                    <!-- the prodect img-->
+                    <div class="flex justify-center items-center">
+                        <img src="../img/home/product-img.png" class="mask-image size-[200px] p-5">
+                    </div>
+
+
+                    <!-- product name -->
+                    <div class="flex justify-center items-center mt-4 px-3">
+                        <p class="text-black text-md font-semibold text-center">name of proudact</p>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <!-- area 2 ( from 13 - 24 product ) -->
+            <div id="area2" class="hidden grid grid-cols-3 gap-24 justify-center">
+
+                <!-- the products boxes will be here: -->
+                products section 2
+
+            </div>
+
+            <!-- area 3 ( from 25 - 36 product ) -->
+            <div id="area3" class="hidden grid grid-cols-3 gap-24 justify-center">
+
+                <!-- the products boxes will be here: -->
+                products section 3
+
+            </div>
+
+            <!-- area 4 ( from 37 - 48 product ) -->
+            <div id="area4" class="hidden grid grid-cols-3 gap-24 justify-center">
+
+                <!-- the products boxes will be here: -->
+                products section 4
+
+            </div>
+
+            <!-- area 5 ( from 49 - 60 product ) -->
+            <div id="area5" class="hidden grid grid-cols-3 gap-24 justify-center">
+
+                <!-- the products boxes will be here: -->
+                products section 5
+
+            </div>
+        </div>
+    </div>
+
+    <!--footer-->
+    <div class="z-10 h-80 py-14 px-24 flex text-[#191919]">
+    </div>
+
+</body>
+
+<!-- for switch tab -->
+<script>
+    function switchTab(tab) {
+        // Get all tabs and content areas
+        const tabs = document.querySelectorAll(".tab-button");
+        const areas = document.querySelectorAll("[id^='area']");
+
+        // Hide all content areas
+        areas.forEach(area => area.classList.add("hidden"));
+
+        // Update tab styles
+        tabs.forEach(tabElement => {
+            if (tabElement.id === `${tab}-tab`) {
+                // Add selected styles using Tailwind classes
+                tabElement.classList.add("bg-[#1f3564]", "hover:bg-[#1f3564]", "border-[#1f3564]", "hover:border-[#1f3564]", "text-white");
+                tabElement.classList.remove("border-[#1f3564]/50", "hover:text-white", "hover:bg-[#1f3564]", "hover:border-[#1f3564]");
+            } else {
+                // Reset other tabs to default styles
+                tabElement.classList.remove("bg-[#1f3564]", "hover:bg-[#1f3564]", "border-[#1f3564]", "hover:border-[#1f3564]", "text-white");
+                tabElement.classList.add("border-[#1f3564]/50", "hover:text-white", "hover:bg-[#1f3564]", "hover:border-[#1f3564]");
+            }
+        });
+
+        // Show selected content area
+        document.getElementById(`area${tab}`).classList.remove("hidden");
+    }
+</script>
+
+<!-- for the modal -->
+<script>
+    // open the modal
+    function toggleModal() {
+        document.getElementById('modal').classList.toggle('hidden');
+    }
+
+    function toggleModal() {
+        document.getElementById('modal').classList.toggle('hidden');
+    }
+
+    function previewImage(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('preview').src = e.target.result;
+                document.getElementById('modal').classList.remove('hidden');
+            }
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
+
+<!-- the modal -->
+<div id="modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+
+    <!-- the white box -->
+    <div class="bg-white p-10 rounded-lg z-60 relative">
+        <form action="">
+
+            <!-- back button -->
+            <div>
+                <button onclick="toggleModal()"
+                    class="px-4 py-2 bg-[#C13139] text-white rounded-lg hover:bg-[#b92933] transition-all text-xs">
+                    < back</button>
+            </div>
+
+            <!-- replace the image button -->
+            <div class="flex justify-end text-xs pt-2 mt-5">
+                <label for="imageInput"
+                    class="text-[#FF342B] underline hover:text-[#C13139] transition-all cursor-pointer">Replace</label>
+                <input type="file" id="imageInput" class="hidden" accept="image/*" onchange="previewImage(event)">
+            </div>
+
+            <!-- the prodect img-->
+            <div class="flex justify-center items-center">
+                <img id="preview" class="size-[200px] p-5 object-cover">
+            </div>
+
+            <!-- product name -->
+            <div class="flex flex-col mt-4 gap-1 text-xs">
+                <p class="px-1">Proudact Name: <span class="text-[#E51B00]">*</span></p>
+                <input
+                    class="text-black font-semibold px-1 py-1 border-b border-gray-400 focus:border-b-gray-900 outline-none"
+                    value="name of proudact">
+            </div>
+
+            <!-- update button-->
+            <div class="mt-8">
+                <button type="submit"
+                    class="bg-[#C13139] hover:bg-[#b92933] transition-all rounded-lg text-white px-3 py-1.5 text-xs">Update</button>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+
+    <title>Chef Friend - proudct</title>
+
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Source Sans Pro Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!--for tailwindcss styles-->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .Poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .Source {
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .dm {
+            font-family: 'DM Serif Text', serif;
+        }
+
+        .nav_link {
+            position: relative;
+        }
+
+        .nav_link::after {
+            content: '';
+            height: 2px;
+            width: 100%;
+            background-color: #FF3E54;
+            position: absolute;
+            left: 0px;
+            bottom: -3px;
+            opacity: 0;
+            pointer-events: none;
+
+            /*to make it smooth: */
+            transition: all 0.2s;
+        }
+
+        .nav_link:hover::after,
+        .nav_link:focus::after {
+            opacity: 100;
+        }
+
+        .mask-image {
+            -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+            mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+        }
+    </style>
+
+</head>
+
+<body class="text-sm Poppins relative">
+
+    <!--the navbar-->
+    <div class="sticky top-0 z-50 bg-white">
+        <div class="h-full w-full">
+
+            <div class="bg-white p-2 px-5 xl:px-7 flex justify-between shadow-md z-50">
+
+                <!-- Log out button-->
+                <div class="flex items-center justify-center mx-3">
+                    <a href="./proudct.html">
+                        <div
+                            class="flex gap-2 p-2 px-7 rounded-full bg-[#C13139] hover:bg-[#b92933] transition-all text-xs text-white">
+                            < Back
+                        </div>
+                    </a>
+                </div>
+
+                <!--the logo-->
+                <div class="mx-3">
+                    <!--the button go to (index.html) -->
+                    <a href="#"><img src="../img/home/logo.png" class="w-28"></a>
+                </div>
+
+                <!-- Log out button-->
+                <div class="flex items-center justify-center mx-3">
+                    <button>
+                        <div
+                            class="flex gap-2 p-2 px-7 rounded-full bg-[#C13139] hover:bg-[#b92933] transition-all text-xs text-white">
+                            Log out
+                        </div>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!---->
+    <div class="flex gap-16 items-start justify-center m-5 mt-16">
+
+        <!-- gray box -->
+        <div class="bg-[#D8D8D8]/25 rounded-sm shadow text-xs p-7 w-1/2">
+            <form action="">
+                <!-- product name -->
+                <div class="flex flex-col my-5 gap-1 text-xs w-full">
+                    <p class="px-1">Proudact Name: <span class="text-[#E51B00]">*</span></p>
+                    <input
+                        class="w-full rounded-sm text-black font-semibold px-1 py-1 border-b border-gray-400 focus:border-b-gray-900 outline-none"
+                        placeholder="Prodect Name" type="text" id="textInput" oninput="updateText(event)">
+
+                </div>
+
+                <!-- upload img -->
+                <div class="flex flex-col my-5 mt-10 gap-1 text-xs w-full">
+                    <p class="px-1">Upload Image: <span class="text-[#E51B00]">*</span></p>
+
+                    <!-- upload button -->
+                    <div class="flex justify-center items-center w-full h-28 bg-white rounded-sm">
+                        <label for="img" class="cursor-pointer">
+                            <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle opacity="0.15" cx="27" cy="27" r="27" fill="#1F3564"/>
+                                <path d="M27.0005 29.812V38.2495" stroke="#1F3564" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M31.2188 36.8442L27.9944 40.0686C27.4452 40.6178 26.5548 40.6178 26.0056 40.0686L22.7812 36.8442" stroke="#1F3564" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M38.179 32.6255C39.0907 31.7321 39.6562 30.487 39.6562 29.1099C39.6562 26.3916 37.4527 24.188 34.7344 24.188C34.4641 24.188 34.1989 24.2098 33.9404 24.2517C33.2857 19.4503 29.1687 15.7505 24.1875 15.7505C18.751 15.7505 14.3438 20.1577 14.3438 25.5942C14.3438 28.3487 15.475 30.8388 17.2983 32.6255" stroke="#1F3564" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg> 
+                        </label>
+                        <input type="file" id="img" class="hidden" accept="image/*" onchange="previewImage(event)">
+                                                   
+                    </div>
+                </div>
+
+                <!-- sumbit button -->
+                <div class="mt-8">
+                    <button type="submit"
+                        class="bg-[#C13139] hover:bg-[#b92933] transition-all rounded-lg text-white px-4 py-1.5 text-xs">Upload</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- product preview -->
+         <div>
+            <h1 class="mb-3 font-semibold">Preview: </h1>
+
+            <!-- product box-->
+            <div class="h-72 w-56 items-center justify-center rounded-xs bg-white border border-gray-300 hover:border-[#C13139]">
+
+                <!-- the prodect img-->
+                <div class="flex justify-center items-center mt-4">
+                    <img id="preview" class="mask-image size-[180px] p-5">
+                </div>
+    
+                <!-- product name -->
+                <div class="flex justify-center items-center mt-4 px-3">
+                    <p id="displayText" class="text-black text-md font-semibold text-center">name of proudact</p>
+                </div>
+    
+            </div>
+         </div>
+    </div>
+
+    <!-- background -->
+    <div class="absolute top-32 right-0">
+        <svg width="140" height="169" viewBox="0 0 240 269" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.1" d="M148.617 25.3072C148.617 25.3072 165.725 2.76721 193.811 4.05299C221.898 5.33876 247.005 23.1383 254.791 52.6657C262.362 81.3748 255.364 106.623 241.614 121C228.279 134.929 200.488 136.228 200.488 136.228M191.021 196.53C191.021 196.53 201.773 197.465 208.337 214.595C216.733 236.512 197.251 258 197.251 258C197.893 244.181 179.847 242.019 165.605 234.681C151.363 227.343 155.552 205.309 161.416 195.055C167.281 184.802 179.582 180.568 186.902 183.717C193.257 186.451 188.086 198.14 180.899 192.237C170.203 183.451 173.989 164.281 221.741 150.709C269.492 137.137 285 190.62 285 190.62C285 190.62 278.021 186.88 261.82 190.906C245.62 194.939 249.254 198.965 229.702 199.835C210.151 200.699 187.601 175.73 187.601 175.73M187.601 175.736C187.601 175.736 249.771 152.469 259.181 169.808C268.591 187.146 213.212 161.086 213.212 161.086M170.909 201.458C170.909 201.458 190.599 222.791 193.112 227.109C195.626 231.427 191.853 238.551 187.04 235.317C182.222 232.077 187.607 205.978 187.607 205.978M219.53 176.048C219.53 176.048 229.759 178.269 237.022 185.464M31.0869 45.5874C44.5853 27.5931 75.3993 11.4494 112.682 15.7678C149.965 20.0862 172.591 35.6324 187.248 62.8415C201.912 90.0505 199.814 144.469 185.151 165.632C170.493 186.802 145.644 214.946 97.4138 213.102C51.0101 211.329 15.8184 180.146 6.0867 135.221C-2.55533 95.3235 17.5821 63.5883 31.0869 45.5874ZM70.2279 93.3689C66.6376 94.804 65.6172 103.304 70.2279 104.597C74.8387 105.895 80.9801 102.869 79.8652 98.9795C78.744 95.0962 74.5552 91.6415 70.2279 93.3689ZM161.12 71.8029C162.777 68.5495 158.928 63.0947 155.137 65.5104C151.338 67.9261 148.812 73.8095 151.634 75.2252C154.463 76.6408 159.124 75.7252 161.12 71.8029ZM74.8387 125.747C73.327 129.072 77.4086 134.338 81.0935 131.747C84.7783 129.156 87.0459 123.162 84.161 121.883C81.2824 120.604 76.6591 121.74 74.8387 125.747ZM227.013 36.3922C225.608 37.5351 229.891 56.0489 225.287 57.4061C220.682 58.7634 220.191 53.4384 222.408 52.7566C224.625 52.0812 233.79 67.2832 235.73 66.6728C237.67 66.0689 234.993 45.7822 238.936 46.3667C242.886 46.9446 243.05 51.8864 240.58 52.1786C238.118 52.4644 228.417 35.2493 227.013 36.3922ZM140.189 44.412C144.888 54.6787 115.208 119.143 107.423 109.889C99.6373 100.642 151.37 53.2371 161.511 55.5424C171.652 57.8477 192.35 102.499 182.7 110.98C173.05 119.461 106.547 124.624 107.712 117.331C108.878 110.038 173.05 110.629 176.962 121.377C180.874 132.124 180.08 138.806 174.342 151.599C168.603 164.392 161.851 181.204 148.176 178.262C134.508 175.321 99.2342 129.254 107.196 124.15C115.158 119.045 137.034 173.126 129.828 188.276C123.825 200.906 74.5049 204.686 69.8878 185.529C64.4897 163.125 94.151 121.864 99.0389 124.572C103.927 127.28 75.2985 178.211 53.5171 176.048C31.7356 173.879 21.4685 134.455 26.8792 120.052C32.29 105.649 94.0817 109.993 95.4801 116.805C96.8784 123.611 30.6963 106.863 25.632 98.9146C20.5678 90.9662 43.25 42.4249 64.307 45.6718C85.3641 48.9187 107.857 107.662 101.634 111.026C95.4108 114.389 67.6454 49.5032 81.1124 36.8338C94.5793 24.1643 133.727 30.275 140.189 44.412Z" stroke="#C13139" stroke-width="8" stroke-miterlimit="10"/>
+        </svg>                
+    </div>
+
+    <div class="absolute bottom-0 left-0">
+        <svg width="104" height="159" viewBox="0 0 214 269" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.1" d="M70.6172 25.3072C70.6172 25.3072 87.7249 2.76721 115.811 4.05299C143.898 5.33876 169.005 23.1383 176.791 52.6657C184.362 81.3748 177.364 106.623 163.614 121C150.279 134.929 122.488 136.228 122.488 136.228M113.021 196.53C113.021 196.53 123.773 197.465 130.337 214.595C138.733 236.512 119.251 258 119.251 258C119.893 244.181 101.847 242.019 87.6052 234.681C73.3635 227.343 77.5522 205.309 83.4165 195.055C89.2807 184.802 101.582 180.568 108.902 183.717C115.257 186.451 110.086 198.14 102.899 192.237C92.2034 183.451 95.989 164.281 143.741 150.709C191.492 137.137 207 190.62 207 190.62C207 190.62 200.021 186.88 183.82 190.906C167.62 194.939 171.254 198.965 151.702 199.835C132.151 200.699 109.601 175.73 109.601 175.73M109.601 175.736C109.601 175.736 171.771 152.469 181.181 169.808C190.591 187.146 135.212 161.086 135.212 161.086M92.9089 201.458C92.9089 201.458 112.599 222.791 115.112 227.109C117.626 231.427 113.853 238.551 109.04 235.317C104.222 232.077 109.607 205.978 109.607 205.978M141.53 176.048C141.53 176.048 151.759 178.269 159.022 185.464M-46.9131 45.5874C-33.4147 27.5931 -2.6007 11.4494 34.6822 15.7678C71.9651 20.0862 94.5907 35.6324 109.248 62.8415C123.912 90.0505 121.814 144.469 107.151 165.632C92.4931 186.802 67.6441 214.946 19.4138 213.102C-26.9899 211.329 -62.1816 180.146 -71.9133 135.221C-80.5553 95.3235 -60.4179 63.5883 -46.9131 45.5874ZM-7.77206 93.3689C-11.3624 94.804 -12.3828 103.304 -7.77206 104.597C-3.1613 105.895 2.9801 102.869 1.8652 98.9795C0.744006 95.0962 -3.44474 91.6415 -7.77206 93.3689ZM83.1204 71.8029C84.777 68.5495 80.9284 63.0947 77.1365 65.5104C73.3383 67.9261 70.8125 73.8095 73.6344 75.2252C76.4625 76.6408 81.1237 75.7252 83.1204 71.8029ZM-3.16129 125.747C-4.67302 129.072 -0.591363 134.338 3.09347 131.747C6.7783 129.156 9.0459 123.162 6.16103 121.883C3.28245 120.604 -1.34092 121.74 -3.16129 125.747ZM149.013 36.3922C147.608 37.5351 151.891 56.0489 147.287 57.4061C142.682 58.7634 142.191 53.4384 144.408 52.7566C146.625 52.0812 155.79 67.2832 157.73 66.6728C159.67 66.0689 156.993 45.7822 160.936 46.3667C164.886 46.9446 165.05 51.8864 162.58 52.1786C160.118 52.4644 150.417 35.2493 149.013 36.3922ZM62.1893 44.412C66.8883 54.6787 37.2081 119.143 29.4227 109.889C21.6373 100.642 73.3698 53.2371 83.511 55.5424C93.6521 57.8477 114.35 102.499 104.7 110.98C95.0505 119.461 28.5471 124.624 29.7124 117.331C30.8777 110.038 95.0505 110.629 98.962 121.377C102.874 132.124 102.08 138.806 96.3417 151.599C90.6035 164.392 83.8511 181.204 70.1763 178.262C56.5078 175.321 21.2342 129.254 29.1959 124.15C37.1577 119.045 59.0336 173.126 51.8277 188.276C45.8249 200.906 -3.49514 204.686 -8.1122 185.529C-13.5103 163.125 16.151 121.864 21.0389 124.572C25.9268 127.28 -2.70148 178.211 -24.4829 176.048C-46.2644 173.879 -56.5315 134.455 -51.1208 120.052C-45.71 105.649 16.0817 109.993 17.48 116.805C18.8784 123.611 -47.3037 106.863 -52.3679 98.9146C-57.4322 90.9662 -34.75 42.4249 -13.693 45.6718C7.36409 48.9187 29.8573 107.662 23.634 111.026C17.4108 114.389 -10.3546 49.5032 3.11236 36.8338C16.5793 24.1643 55.7267 30.275 62.1893 44.412Z" stroke="#C13139" stroke-width="8" stroke-miterlimit="10"/>
+        </svg>            
+    </div>
+</body>
+
+
+
+
+<!-- for img preview and name -->
+<script>
+
+    //img
+    function toggleModal() {
+        document.getElementById('modal').classList.toggle('hidden');
+    }
+
+    function previewImage(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('preview').src = e.target.result;
+                document.getElementById('modal').classList.remove('hidden');
+            }
+            reader.readAsDataURL(file);
+        }
+    }
+
+    //name 
+    function updateText(event) {
+            document.getElementById('displayText').innerText = event.target.value;
+        }
+</script>
+
+</html>
